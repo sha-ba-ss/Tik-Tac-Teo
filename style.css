@@ -12,15 +12,14 @@ body{
     align-items: center;
     justify-content: center;
 }
-h1{
-    align-items: center;
-    justify-content: center;
+h1,h2 {
     margin: auto;
 }
 #container{
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
+    margin-bottom: 20px;
 }
 .box{
     background-color: #ffffff;
@@ -32,3 +31,26 @@ h1{
     justify-content: center;
     font-size: 100px;
 }
+#replay{
+    margin: auto;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+#ree{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    display: none
+}
+table,th,td{
+    border: 2px solid white;
+}
+/* #scorer{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+} */
