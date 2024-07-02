@@ -3,10 +3,12 @@ var container = document.getElementById('container');
 var replayCon = document.getElementById('ree');
 var result = document.getElementById('result');
 var score = document.querySelectorAll('.score');
+var game = document.getElementById("games");
 var butt;
 var a = 0;
 var b = 0;
 var c = 0;
+var d = 0;
 //creating winning conditions
 const winningConditions = [
     [0,1,2],[3,4,5],[6,7,8],
@@ -82,6 +84,8 @@ function divClicked(index) {
         a++
         if(a==8){
             replayCon.style.display ="inline";
+            
+            
         }
     }}
     //restart the game without removing the markes
@@ -89,6 +93,8 @@ function replay() {
     container.innerHTML = '';
     replayCon.style.display = "none";
     a = 0; // Reset the move counter
+    d++;
+    game.innerHTML = d;
     result.innerHTML ="";
     removeContainerClickListener(); // Remove the old event listener
     start(); // Restart the game
