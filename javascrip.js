@@ -1,10 +1,8 @@
 //get elements
 var container = document.getElementById('container');
-var replayCon = document.getElementById('ree');
-var result = document.getElementById('result');
 var score = document.querySelectorAll('.score');
 var game = document.getElementById("games");
-var butt;
+var box;
 var a = 0;
 var b = 0;
 var c = 0;
@@ -20,7 +18,7 @@ window.onload = function () {
     start();
     addContainerClickListener();
 }
-//creating boxes, add onclick funtion to boxes,give class name,and sellection to butt array
+//creating boxes, add onclick funtion to boxes,give class name,and sellection to box array
 function start(){
     for (let i = 0; i < 9; i++) {
         const boxes = document.createElement("div");
@@ -30,7 +28,17 @@ function start(){
             divClicked(i);
         }
         boxes.classList.add("box"); 
-        butt = document.querySelectorAll('.box');   
+        box = document.querySelectorAll('.box');   
+    }
+    for (let i = 0; i < 9; i++) {
+        box[i].classList.add("box"+i);
+        box[i].style.display = "none";
+    }
+    for (let i = 0; i < 9; i++) {
+        setTimeout(()=>{
+            box[i].style.display = "inline";
+        },100*i);
+        
     }
 }
 //function for adding and removing the click event lisner for container
@@ -43,59 +51,45 @@ function removeContainerClickListener() {
 //cheaking the game status
 function containerClickListener() {
           for (let i = 0; i < 8; i++) {
-              let v0 = butt[winningConditions[i][0]].textContent;
-              let v1 = butt[winningConditions[i][1]].textContent;
-              let v2 = butt[winningConditions[i][2]].textContent;
+              let v0 = box[winningConditions[i][0]].textContent;
+              let v1 = box[winningConditions[i][1]].textContent;
+              let v2 = box[winningConditions[i][2]].textContent;
               if (v0 != "" && v0 === v1 && v0 === v2) {
                   for (let j = 0; j < 3; j++) {
-                      butt[winningConditions[i][j]].style.backgroundColor = "green";
+                      box[winningConditions[i][j]].style.backgroundColor = "rgb(81, 29, 0)";
                     }
                   for (let k = 0; k < 9; k++) {
-                      butt[k].onclick = null;                                      
+                      box[k].onclick = null;                                      
                     }
-                    replayCon.style.display ="inline";
                     if (a % 2 == 0) {
-                        result.innerHTML ="O win"
                         b++
                         score[1].textContent =b;
                         removeContainerClickListener()
                     }else if(a % 2 !== 0){
-                        result.innerHTML ="X win"
                         c++
                         score[0].textContent =c;
                         removeContainerClickListener()
-                    }
-                    
-                    
+                    }   
                 }
-             
             }
 }
 //gaming when cliking on the boxes
 function divClicked(index) {
     if(a % 2 == 0) {
-        butt[index].textContent = 'X';
-        butt[index].onclick = null;
-        console.log(a)
+        box[index].textContent = 'X';
+        box[index].onclick = null;
         a++;
     }else if (a % 2 !== 0) {
-        butt[index].textContent = 'O';
-        butt[index].onclick = null;
+        box[index].textContent = 'O';
+        box[index].onclick = null;
         a++
-        if(a==8){
-            replayCon.style.display ="inline";
-            
-            
-        }
     }}
     //restart the game without removing the markes
 function replay() {
     container.innerHTML = '';
-    replayCon.style.display = "none";
     a = 0; // Reset the move counter
     d++;
     game.innerHTML = d;
-    result.innerHTML ="";
     removeContainerClickListener(); // Remove the old event listener
     start(); // Restart the game
     addContainerClickListener();

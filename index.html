@@ -5,36 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XOX game</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    
-    <h1>Tic Tac Teo</h1>
-    
-    <table id="no">
-        <th>no.of games</th><td id="games">0</td>
-    </table>
-
+ <div id="main-container">
+    <div id="nav">
+        <ul>
+            <li>Docs</li>
+            <li>Play</li>
+            <li>About Us</li>
+        </ul>
+    </div>
+    <div id="score1" class="score-box">
+        <p>Player 1<br>SCORE</p>
+        <p style="color: aliceblue; font-size: 30px;" class="score">0</p>
+    </div>
     <div id="container"></div>
+    <div id="score2" class="score-box">
+        <p>Player 2<br>SCORE</p>
+        <p style="color: aliceblue;  font-size: 30px;" class="score">0</p>
+    </div>
+    <div id="restart"><button id="replay" onclick="replay()">Replay </button> <div id="no-of_games"><p>No.of Games : </p><p id="games">0</p></div></div>
+</div>
 
-    <div id="footer">
-       
-    <div class="bottem">
-    <table>
-        <tr><td>Player</td><td>score</td></tr>
-        <tr>
-        <th>x</th>
-        <td class="score">0</td>
-        </tr>
-        <tr><th>o</th>
-        <td class="score">0</td></tr>
-    </table>
+<div id="logo">
+    <h1 style="color: rgb(180, 31, 31);">THE</h1>
+    <h1 style="color: rgb(255, 255, 255);"> TIC-TAC</h1>
+    <h1 style="color: rgb(255, 255, 255);">-TOE</h1>
+    <h1 style="color:rgb(105, 0, 0);">GAME</h1> 
 </div>
-<div id="ree">
-    <h2 id="result"></h2>
-    <button id="replay" onclick="replay()">Replay </button>
- </div>
-</div>
-       <script src="javascrip.js"></script>
+  <script src="javascrip.js"></script>
 </body>
 </html>

@@ -1,105 +1,143 @@
+/* for all */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
 }
+/* for body */
 body{
-    display: grid;
-    grid-template-rows: 150px auto auto;
-    background-color:rgb(37, 37, 37) ;
-    color: #ffffff;
-    align-items: center;
-    justify-content: center;
-}
-h1,h2 {
-    margin: auto;
-}
-#container{
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    margin-bottom: 20px;
-}
-.box{
-    background-color: #ffffff;
-    border: 4px solid rgb(37, 37, 37);
-    border-radius: 10px;
-    color: #000;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 100px;
-    animation: example 1s;
-    transition: 1s;
+    justify-content: space-between;
+    height: 100vh;
+    margin-left: 15%;
+    background-color:rgb(204, 117, 38);
 }
+/* for the main container */
+#main-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background: rgb(180, 31, 31);
+    border-radius: 30px;
+    grid-template-areas: 
+        ".       nav        . "
+        "score1 container  score2 "
+        ".      restart         . ";
+}
+
+/* elemrnts wize order */
+
+/* 1) navigation bar */
+#nav{
+    grid-area: nav;
+}
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 20px 0; 
+    justify-content: space-around;
+    width: 100%;
+    background-color:rgb(221, 80, 14);
+    padding: 10px;
+    border-radius: 20px;
+}
+ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+}
+/* 2)score boxes */
+#score1{
+    grid-area: score1;
+    width: 100px;
+    height: 100px;
+    border-radius: 0px 20px 20px 20px;
+}
+#score2{
+    grid-area: score2;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px 0px 20px 20px ;
+}
+.score-box {
+    background-color:rgb(236, 100, 8);
+    color: white;
+    padding: 10px;
+    margin: 70% 20px  40% 20px;
+    text-align: center;
+    color: #000;
+    font-size: 50px;
+}
+/* 3)restart and no.of games and replay*/
+#restart{
+    grid-area: restart;
+    display: flex;
+}
+#replay,#no-of_games {
+    background-color:rgb(221, 80, 14);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin:20px 0  30px 10%;
+    display: flex;
+}
+#logo {
+    margin-top: 20px;
+    text-align: right;
+    color: #e76f51;
+}
+h1{
+    font-size: 70px;
+}
+
+/* 4)game container */
+#container{
+    background-color: rgb(216, 170, 137);
+    display: grid;
+    grid-template-columns: 92px 92px 92px;
+    grid-template-rows: 92px 92px 92px;
+    gap: 10px;
+    grid-area: container;
+    margin: 10px 20px 10px 20px;
+    padding: 13px;
+    border-radius: 20px;
+}
+.box{
+    background-color:rgb(158, 57, 0);
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 70px;
+    text-align: center;
+    font-weight: 300;
+    padding: 4%;
+}
+/* animation for the 9 boxes */
+.box0{animation: example 1s ease-in-out ;}
+.box1{animation: example 1s ease-in-out ;}
+.box2{animation: example 1s ease-in-out ;}
+.box3{animation: example 1s ease-in-out ;}
+.box4{animation: example 1s ease-in-out ;}
+.box5{animation: example 1s ease-in-out ;}
+.box6{animation: example 1s ease-in-out ;}
+.box7{animation: example 1s ease-in-out ;}
+.box8{animation: example 1s ease-in-out ;}
+
 @keyframes example{
     from{
         opacity: 0;
         filter: blur(5px);
         transform: translateX(-200px);
-        transform: all 1;
-    }
-    to{
-        transform: rotate(180deg);
-    }
-}
-#replay{
-    margin: auto;
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 15px;
-    
-}
-@keyframes replay{
-    from{
-        opacity: 0;
-        filter: blur(5px);
     }
     to{
         opacity: 1;
+        filter: blur(0px);
+        transform: translateX(00px);
     }
-}
-#ree{
-    margin: auto;
-    display: none;
-    animation: replay 1s;
-}
-.box:hover{
-    border: 2px solid #ffffff;
-}
-
-table {
-    border: 2px solid #fff;
-    border-collapse: collapse;
-    margin: auto;
-    background-color: #333;
-    color: #fff;
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-th, td {
-    border: 2px solid #fff;
-    padding: 5px 10px;
-    text-align: center;
-    font-size: 1.2em;
-    transition: .3s;
-}
-
-th {
-    background-color: #444;
-}
-
-td.score {
-    font-weight: bold;
-    font-size: 1.5em;
-}
-#no{
-    margin-bottom: 10px;
-}
-#footer{
-    display: grid;
-    grid-template-columns: repeat(2 ,1fr);
 }
