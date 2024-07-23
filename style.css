@@ -5,32 +5,58 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 15px;
 }
-/* for body */
+
+/* animation for the 9 boxes */
+.box0{animation: example 1s ease-in-out ;}
+.box1{animation: example 1s ease-in-out ;}
+.box2{animation: example 1s ease-in-out ;}
+.box3{animation: example 1s ease-in-out ;}
+.box4{animation: example 1s ease-in-out ;}
+.box5{animation: example 1s ease-in-out ;}
+.box6{animation: example 1s ease-in-out ;}
+.box7{animation: example 1s ease-in-out ;}
+.box8{animation: example 1s ease-in-out ;}
+
+@keyframes example{
+    from{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-200px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateX(00px);
+    }
+}
+/* the style will applay the widthe of screen became less than 500px */
+@media(width>500px){
+    body{
+        justify-content: space-between;
+        padding-left: 10%;
+    }
+    #main-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        border-radius: 30px;
+        grid-template-areas: 
+            ".       nav        . "
+            "score1 container  score2 "
+            ".      restart         . ";
+    }
+    /* for body */
 body{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 100vh;
-    margin-left: 15%;
     background-color:rgb(204, 117, 38);
 }
 /* for the main container */
 #main-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
     background: rgb(180, 31, 31);
-    border-radius: 30px;
-    grid-template-areas: 
-        ".       nav        . "
-        "score1 container  score2 "
-        ".      restart         . ";
 }
-
-/* elemrnts wize order */
-
 /* 1) navigation bar */
 #nav{
     grid-area: nav;
@@ -71,7 +97,6 @@ ul li {
     margin: 70% 20px  40% 20px;
     text-align: center;
     color: #000;
-    font-size: 50px;
 }
 /* 3)restart and no.of games and replay*/
 #restart{
@@ -88,7 +113,7 @@ ul li {
     margin:20px 0  30px 10%;
     display: flex;
 }
-#logo {
+#logo2 {
     margin-top: 20px;
     text-align: right;
     color: #e76f51;
@@ -118,26 +143,119 @@ h1{
     font-weight: 300;
     padding: 4%;
 }
-/* animation for the 9 boxes */
-.box0{animation: example 1s ease-in-out ;}
-.box1{animation: example 1s ease-in-out ;}
-.box2{animation: example 1s ease-in-out ;}
-.box3{animation: example 1s ease-in-out ;}
-.box4{animation: example 1s ease-in-out ;}
-.box5{animation: example 1s ease-in-out ;}
-.box6{animation: example 1s ease-in-out ;}
-.box7{animation: example 1s ease-in-out ;}
-.box8{animation: example 1s ease-in-out ;}
+#logo1{
+    display: none;
+}
 
-@keyframes example{
-    from{
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateX(-200px);
+#menu{
+    display: none;
+}
+}
+
+
+
+
+
+
+@media(width<500px){
+    
+    #logo2{
+        display: none;
     }
-    to{
-        opacity: 1;
-        filter: blur(0px);
-        transform: translateX(00px);
+    #nav{
+        display: none;
+    }
+    body{
+        background-color:rgb(204, 117, 38);
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "navigation logo1"
+        "maincontainer maincontainer";
+    }
+    #menu{
+        grid-area: navigation;
+       padding: 10%;
+    }
+    #logo1{
+        grid-area: logo1;
+        text-align: right;
+        padding: 10px;
+    }
+    #main-container{
+        grid-area: maincontainer;
+        background: rgb(180, 31, 31);
+        display: grid;
+        border-radius: 30px 30px 0 0;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto ;
+        margin-top: 40px;
+        gap: 10px;
+        grid-template-areas: 
+            "score1    score2 "
+            "container container "
+            "restart   restart ";
+        
+    }
+    #score1{
+        grid-area: score1;
+    }
+    #score2{
+        grid-area: score2;
+    }
+    .score-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color:rgb(236, 100, 8);
+        font-weight: 600;
+        padding: 10px 30px 10px 30px;
+        color: white;
+        text-align: center;
+        color: #000;
+        border-radius: 10px;
+        margin: 50px 10px 10px 10px;
+    }
+    #container{
+        background-color: rgb(216, 170, 137);
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+        gap: 10px;
+        grid-area: container;
+        margin: 10px auto 10px auto;
+        padding: 13px;
+        border-radius: 20px;
+        height: 350px;
+        width: 350px;
+        
+    }
+    
+    .box{
+        background-color:rgb(158, 57, 0);
+        border-radius: 30px;
+        color: #ffffff;
+        font-size: 65px;
+        text-align: center;
+        font-weight: 300;
+        padding: 10px;
+    }
+    #restart{
+        grid-area: restart;
+        display: block;
+        padding: auto;
+        margin: auto;
+    }
+    #replay,#no-of_games {
+        background-color:rgb(221, 80, 14);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: auto;
+        display: flex;
+        margin-bottom: 10px;
     }
 }
