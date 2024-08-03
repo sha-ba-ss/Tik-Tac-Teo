@@ -1,7 +1,9 @@
+
 //get elements
 var container = document.getElementById('container');
 var score = document.querySelectorAll('.score');
 var game = document.getElementById("games");
+const popup = document.getElementById("popup");
 var box;
 var a = 0;
 var b = 0;
@@ -13,10 +15,16 @@ const winningConditions = [
     [0,3,6],[1,4,7],[2,5,8],
     [0,4,8],[2,4,6],
 ]
+
+
+
 //when browser open
 window.onload = function () {
     start();
     addContainerClickListener();
+    setTimeout(()=>{
+        popup.style.display= "flex";
+    },2000)
 }
 //creating boxes, add onclick funtion to boxes,give class name,and sellection to box array
 function start(){
@@ -93,4 +101,16 @@ function replay() {
     removeContainerClickListener(); // Remove the old event listener
     start(); // Restart the game
     addContainerClickListener();
+}
+function surch() {
+    const inputElement = document.getElementById('name');
+    const name = inputElement.value;
+    if (name == "") {
+        alert("you must ender your name")
+    }
+    else{
+        const player = document.getElementById("player1");
+        player.innerText =name
+        popup.style.display= "none";
+    }
 }

@@ -6,6 +6,11 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --font-size: 16px;
+}
 
 /* animation for the 9 boxes */
 .box0{animation: example 1s ease-in-out ;}
@@ -151,12 +156,20 @@ h1{
     display: none;
 }
 }
+.loader {
+    border: 3px solid rgb(216, 170, 137); /* Light grey */
+    border-top: 3px solid rgb(158, 57, 0); /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    margin: 3px auto;
+}
 
-
-
-
-
-
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 @media(width<500px){
     
     #logo2{
@@ -258,4 +271,35 @@ h1{
         display: flex;
         margin-bottom: 10px;
     }
+}#popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#popup-content {
+    display: block;
+    background-color:rgb(221, 80, 14);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+#popup-content input{
+    
+    background-color:  rgb(216, 170, 137);
+    border: none;
+    padding: 3px;
+    color:black;
+}
+#popup-content input:focus{
+    outline: none; /* Remove the default focus outline */
+    border-color: #ccc
 }

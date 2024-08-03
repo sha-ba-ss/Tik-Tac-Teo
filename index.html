@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body><div id="menu"><svg width="30" height="30" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<body>
+    <div id="popup">
+        <div id="popup-content">
+        
+            <input type="text" placeholder="ender your name" id="name">
+            <input type="submit" value="surch" onclick="surch()">
+        
+    </div>
+    </div>
+    
+    <div id="menu"><svg width="30" height="30" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M2.75 11H19.25M2.75 5.5H19.25M2.75 16.5H19.25" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     </div>
@@ -26,12 +36,13 @@
         </ul>
     </div>
     <div id="score1" class="score-box">
-        <p>Player 1<br>SCORE</p>
+        <p id="player1">Player 1<br>SCORE</p>
         <p style="color: aliceblue; font-size: 30px;" class="score">0</p>
     </div>
     <div id="container"></div>
     <div id="score2" class="score-box">
-        <p>Player 2<br>SCORE</p>
+        <div class="loader"></div>
+        
         <p style="color: aliceblue;  font-size: 30px;" class="score">0</p>
     </div>
     <div id="restart"><button id="replay" onclick="replay()">Replay </button> <div id="no-of_games"><p>No.of Games : </p><p id="games">0</p></div></div>
