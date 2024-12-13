@@ -1,1 +1,8 @@
-"site": "tic-tac-teo-oxo",
+{
+  "hosting": {
+    "site": "tic-tac-teo-oxo",
+
+    "public": "public",
+    ...
+  }
+}
