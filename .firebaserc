@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "tic-tac-teo-c09a7",
+    "ignore": [
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "index.html"
+      }
+    ]
+  }
+}
