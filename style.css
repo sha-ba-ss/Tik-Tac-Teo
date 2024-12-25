@@ -85,8 +85,8 @@ ul li {
 /* 2)score boxes */
 #score1{
     grid-area: score1;
-    width: 90px;
-    height: 0px;
+    width: 100px;
+    height: 100px;
     border-radius: 0px 20px 20px 20px;
 }
 #score2{
